@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtawtc6qbjweq"]
+
+[ext_resource type="Script" path="res://Scenes/LevelSelector/level_selector.gd" id="1_p75mj"]
+[ext_resource type="PackedScene" uid="uid://c0osumvv7beop" path="res://Scenes/Utilities/ActGrid/act_grid.tscn" id="2_1jco1"]
+[ext_resource type="PackedScene" uid="uid://d3mub2o2gv2g3" path="res://Scenes/TitleScreen/title_screen.tscn" id="3_jwjbd"]
+
+[node name="LevelSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p75mj")
+act_grid = ExtResource("2_1jco1")
+title_screen = ExtResource("3_jwjbd")
+acts_resource_directory = "res://Resources/Acts"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.541176, 0.541176, 0.541176, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer"]
+layout_mode = 2

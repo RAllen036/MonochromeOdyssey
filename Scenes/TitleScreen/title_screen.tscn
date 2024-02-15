@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3mub2o2gv2g3"]
+
+[ext_resource type="Script" path="res://Scenes/TitleScreen/title_screen.gd" id="1_clwau"]
+[ext_resource type="PackedScene" uid="uid://dtawtc6qbjweq" path="res://Scenes/LevelSelector/level_selector.tscn" id="2_jy0g7"]
+[ext_resource type="Texture2D" uid="uid://co7sxw2fobx6" path="res://Assets/Buttons/Start/StartNormal.png" id="2_w3c18"]
+[ext_resource type="Texture2D" uid="uid://6bhjfr8prtey" path="res://Assets/Buttons/Settings/SettingsNormal.png" id="3_2mmjh"]
+[ext_resource type="Texture2D" uid="uid://5n77h13nxuq6" path="res://Assets/Buttons/Quit/QuitNormal.png" id="4_dieol"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_clwau")
+level_selector = ExtResource("2_jy0g7")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Start" type="TextureButton" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_w3c18")
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Settings" type="TextureButton" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_2mmjh")
+
+[node name="HSeparator2" type="HSeparator" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Quit" type="TextureButton" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_dieol")
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

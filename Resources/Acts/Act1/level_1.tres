@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=3 format=3 uid="uid://dfxaj356y4ghs"]
+
+[ext_resource type="Texture2D" uid="uid://dhgp6glhvqnrp" path="res://Assets/Icons/Acts/Act1/Level1/Level1Icon.png" id="1_a4ya6"]
+[ext_resource type="Script" path="res://Resources/Scripts/LevelResources/level_resource.gd" id="1_g4g55"]
+
+[resource]
+script = ExtResource("1_g4g55")
+name = "Level 1"
+icon = ExtResource("1_a4ya6")
